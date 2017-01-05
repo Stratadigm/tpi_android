@@ -35,6 +35,7 @@ import com.biz.stratadigm.tpi.components.CustomEditText;
 
 import org.json.JSONObject;
 
+import java.security.spec.ECField;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -128,7 +129,11 @@ public class ThaliFragment extends Fragment {
         mButSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendThali();
+                try {
+                    sendThali();
+                } catch (Exception e){
+                    Toast.makeText(getActivity().getApplicationContext(),"Wrong input",Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return view;

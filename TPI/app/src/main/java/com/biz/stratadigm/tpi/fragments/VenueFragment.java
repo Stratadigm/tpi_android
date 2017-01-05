@@ -62,7 +62,11 @@ public class VenueFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                sendVenue();
+                try {
+                    sendVenue();
+                } catch (Exception e){
+                    Toast.makeText(getActivity().getApplicationContext(),"Wrong input",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

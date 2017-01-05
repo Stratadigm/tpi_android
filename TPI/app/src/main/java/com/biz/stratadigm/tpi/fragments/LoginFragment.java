@@ -58,7 +58,12 @@ public class LoginFragment extends Fragment {
         mConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerUser();
+                try {
+                    registerUser();
+                } catch (Exception e){
+                    Toast.makeText(getActivity().getApplicationContext(),"Wrong input",Toast.LENGTH_SHORT).show();
+                }
+
               //  startActivity(new Intent(getActivity().getApplicationContext(), MainActivity.class));
             }
         });

@@ -96,7 +96,7 @@ public class VenueAdapter extends RecyclerView.Adapter<VenueAdapter.Holder> {
                 editor.putString("venue",venue.id);
                 ThaliFragment.venue.setText(venue.id);
                 editor.apply();
-                MainActivity.mViewPagerJob.setCurrentItem(2);
+                MainActivity.mViewPagerJob.setCurrentItem(1);
             }
         });
         holder.venueList.setOnClickListener(new View.OnClickListener() {
