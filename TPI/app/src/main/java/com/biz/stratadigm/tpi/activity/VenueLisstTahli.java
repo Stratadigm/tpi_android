@@ -1,5 +1,6 @@
 package com.biz.stratadigm.tpi.activity;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,12 +36,22 @@ public class VenueLisstTahli extends AppCompatActivity {
     private ThaliAdapter mVenueAdapter;
     private int positiion,offset=0;
     private CustomTextView more,less;
+    private FloatingActionButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_lisst_tahli);
         positiion = getIntent().getExtras().getInt("id");
+
+        back = (FloatingActionButton) findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         mListThali=new ArrayList<>();
         mList=(RecyclerView) findViewById(R.id.venueList);
